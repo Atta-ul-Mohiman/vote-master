@@ -13,25 +13,27 @@ class presidential extends StatefulWidget {
 class _presidentialState extends State<presidential> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-                child: Column(children: [
-              Container(
-                child: SingleChildScrollView(
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+              child: Column(children: [
+            Container(
+
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.only(top:50.0),
                   child: Column(
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 18.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 80),
-                              child: Expanded(
+                        child: Center(
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 8.0, right: 80),
                                 child: Container(
                                   child: Icon(
                                     Icons.arrow_back,
@@ -44,36 +46,33 @@ class _presidentialState extends State<presidential> {
                                   width: 36,
                                 ),
                               ),
-                            ),
-                            Container(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text(
-                                  'Leader Board',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'ltim',
-                                    color: Colors.black,
+                              Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Text(
+                                    'Leader Board',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontFamily: 'ltim',
+                                      color: Colors.black,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30)),
-                              width: 148,
-                            ),
-                            Expanded(
-                              flex: 5,
-                              child: Container(
                                 decoration: BoxDecoration(
-                                    color: Colors.transparent,
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(30)),
-                                height: 35,
-                                width: 200,
+                                width: 148,
                               ),
-                            )
-                          ],
+                              // Container(
+                              //   decoration: BoxDecoration(
+                              //       color: Colors.transparent,
+                              //       borderRadius: BorderRadius.circular(30)),
+                              //   height: 35,
+                              //   width: 200,
+                              // )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -355,17 +354,17 @@ class _presidentialState extends State<presidential> {
                     ],
                   ),
                 ),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/flag.png'),
-                        fit: BoxFit.cover)),
-                height: MediaQuery.of(context).size.height / 1,
-                width: double.infinity,
               ),
-              // BottomNavBar(),
-            ])),
-          ],
-        ),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/flag.png'),
+                      fit: BoxFit.cover)),
+              height: MediaQuery.of(context).size.height / 1,
+              width: double.infinity,
+            ),
+            // BottomNavBar(),
+          ])),
+        ],
       ),
     );
   }
